@@ -18,7 +18,7 @@ const Emoji = ({codepoint, style = {}, onClick, ariaLabel}) => {
     );
 };
 
-const getRenderer = ({style, onClick, ariaLabel, ...props}) => (codepoint, key) => (
+const getRenderer = ({style, onClick, ...props}) => (codepoint, key) => (
     <Emoji
         codepoint={codepoint}
         style={style}
