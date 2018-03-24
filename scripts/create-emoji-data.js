@@ -26,10 +26,10 @@ const COMMENT = `/*eslint-disable*/
 const items = Object.keys(data).map(key => {
     const emoji = data[key];
     const codepoint = emoji.unicode;
+    
     return {
         codepoint: codepoint,
         unicode: String.fromCodePoint(...codepoint.split('-').map(c => parseInt(c, 16))),
-        short: emoji.shortname,
         ascii: emoji.aliases_ascii
     };
 });
@@ -37,7 +37,7 @@ const items = Object.keys(data).map(key => {
 items.sort((a, b) => b.codepoint.length - a.codepoint.length);
 
 const str = items.map(item =>
-    JSON.stringify([item.codepoint, item.unicode, item.short, item.ascii].slice(0, INCLUDE_ASCII ? 4 : 3))
+    JSON.stringify([item.codepoint, item.unicode])
 ).join(',\n');
 
-console.log(`${COMMENT}export default [\n${str}\n];`);
+console.log(`${COMMENT}export default new Map([\n${str}\n]);`);

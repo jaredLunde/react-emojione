@@ -1,5 +1,3 @@
-import {codepointToUnicode} from '../utils/emoji-format-conversion';
-
-const getRenderer = () => codepoint => codepointToUnicode.get(codepoint);
-
+import EMOJI_DATA from '../data/emoji-data';
+const getRenderer = () => codepoint => EMOJI_DATA.get(codepoint);
 export default getRenderer;

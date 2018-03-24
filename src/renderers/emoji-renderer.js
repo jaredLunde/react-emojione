@@ -1,31 +1,29 @@
 import React from 'react';
 import {sprite} from '../styles/emojione-sprite';
-import {codepointToShort, codepointToUnicode} from '../utils/emoji-format-conversion';
+import EMOJI_DATA from '../data/emoji-data'
+
 
 const Emoji = ({codepoint, style = {}, onClick, ariaLabel}) => {
-    const shortCodepoint = codepointToShort.get(codepoint);
-    
-    return (
-        <span
-            onClick={onClick}
-            style={sprite(codepoint, style)}
-            title={shortCodepoint}
-            role='img'
-            aria-label={ariaLabel || shortCodepoint}
-        >
-            {codepointToUnicode.get(codepoint)}
-        </span>  
-    );
+  return (
+    <span
+      onClick={onClick}
+      style={sprite(codepoint, style)}
+      role='img'
+      aria-label={ariaLabel}
+    >
+      {EMOJI_DATA.get(codepoint)}
+    </span>
+  );
 };
 
-const getRenderer = ({style, onClick, ...props}) => (codepoint, key) => (
-    <Emoji
-        codepoint={codepoint}
-        style={style}
-        onClick={onClick}
-        ariaLabel={props['aria-label']}
-        key={key}
-    />
+const getRenderer = ({style, onClick, ariaLabel}) => (codepoint, key) => (
+  <Emoji
+    codepoint={codepoint}
+    style={style}
+    onClick={onClick}
+    ariaLabel={ariaLabel}
+    key={key}
+  />
 );
 
 export default getRenderer;
