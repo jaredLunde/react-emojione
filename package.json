@@ -1,6 +1,6 @@
 {
-  "name": "react-emojione",
-  "version": "3.1.10",
+  "name": "@jaredlunde/react-emojione",
+  "version": "4.0.1",
   "description": "A tiny library to use emojis in React",
   "main": "index.js",
   "dependencies": {},
@@ -9,24 +9,18 @@
     "react-dom": "^15.5.3"
   },
   "devDependencies": {
-    "react": "^15.5.3",
-    "react-dom": "^15.5.3",
-    "babel-cli": "^6.3.15",
-    "babel-core": "^6.1.2",
-    "babel-es6-polyfill": "^1.0.1",
-    "babel-loader": "^6.0.1",
-    "babel-preset-es2015": "^6.1.2",
-    "babel-preset-react": "^6.1.2",
-    "emoji-shortnames": "^2.2.7",
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
+    "@babel/preset-stage-0": "^7.0.0-beta.42",
     "emojione": "^2.2.7",
     "eslint": "^3.19.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.10.3",
-    "jsx-loader": "^0.13.2",
+    "react": "^16.3.0-alpha.3",
+    "react-dom": "^16.3.0-alpha.3",
     "rimraf": "^2.4.4",
-    "tape": "^4.5.1",
-    "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "tape": "^4.5.1"
   },
   "files": [
     "lib",
@@ -38,7 +32,7 @@
     "create-styles": "./scripts/create-styles.js > src/styles/emojione-sprite-positions.js",
     "start": "webpack-dev-server --inline --content-base demo/ --config ./webpack.config.js",
     "clean": "rimraf lib",
-    "build": "yarn lint && babel src --out-dir lib",
+    "build": "babel src --out-dir lib",
     "prepublish": "yarn run clean && yarn run build",
     "test": "node test/test.js",
     "lint": "eslint src"
