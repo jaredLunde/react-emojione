@@ -1,23 +1,23 @@
 import positions from './emojione-sprite-positions';
 
-const SPRITE_SIZE = 2794;
+const SPRITE_WIDTH = 4160;
 const EMOJI_SIZE = 64;
 
 const base = {
-  textIndent: '-9999em',
-  imageRendering: 'optimizeQuality',
-  fontSize: 'inherit',
-  height: 32,
-  width: 32,
-  top: -3,
-  position: 'relative',
-  display: 'inline-block',
-  margin: '0 .15em',
-  lineHeight: 'normal',
-  verticalAlign: 'middle',
-  backgroundImage: 'url("https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/sprites/emojione.sprites.png")',
-  backgroundRepeat: 'no-repeat',
-};
+    textIndent: '-9999em',
+    imageRendering: 'optimizeQuality',
+    fontSize: 'inherit',
+    height: 32,
+    width: 32,
+    top: -3,
+    position: 'relative',
+    display: 'inline-block',
+    margin: '0 .15em',
+    lineHeight: 'normal',
+    verticalAlign: 'middle',
+    backgroundImage: 'url("https://github.com/pladaria/react-emojione/blob/emojione3/assets/sprites/emojione-3.1.2-64x64.png?raw=true")',
+    backgroundRepeat: 'no-repeat',
+}
 
 export const sprite = (codepoint, style = {}) => {
   const result = Object.assign({}, base, style);
